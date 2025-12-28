@@ -1,4 +1,4 @@
-# src/core/sync_raw_and_metadata.py
+# source/core/sync_raw_and_metadata.py
 
 from pathlib import Path
 import pandas as pd

@@ -1,3 +1,5 @@
+# source/core/load_document.py
+
 from pathlib import Path
 import re
 import fitz  # PyMuPDF
