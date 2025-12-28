@@ -1,0 +1,123 @@
+PROCESSED DOCUMENT FORMAT — SPEC
+================================
+
+Contract
+--------
+A processed document overrides automatic extraction.
+If a non-empty processed file exists, it is treated as the authoritative text source.
+
+
+Naming
+------
+- One processed file per document
+- Filename MUST equal doc_id exactly
+
+Allowed:
+- CAPST_001.md
+- MG418_012.md
+
+Not allowed:
+- CAPST_001_clean.md
+- CAPST_001_v2.md
+- lowercase variants
+
+
+Format
+------
+- UTF-8 encoding
+- Plain text or Markdown only
+- Preferred extension: .md
+- No binary formats (PDF, DOCX, HTML)
+
+
+Structure
+---------
+- Use Markdown headers (#, ##) to mark sections
+- Section names are flexible
+- Order is flexible
+- Missing sections are allowed
+
+Common sections (non-exhaustive):
+- ABSTRACT
+- INTRODUCTION
+- THEORY / BACKGROUND
+- METHODOLOGY
+- RESULTS
+- DISCUSSION
+- CONCLUSION
+- REFERENCES
+
+
+Page Markers (Optional)
+----------------------
+Page provenance may be preserved using markers:
+
+[[PAGE N]]
+
+- Integers only
+- Optional
+- Used for citation traceability
+
+
+Content Rules
+-------------
+Removed content:
+- headers / footers
+- journal boilerplate
+- running titles
+- copyright notices
+- repeated author blocks
+
+Preserved content:
+- original wording
+- inline citations (e.g., Author et al., Year)
+- section semantics
+
+
+Tables & Figures
+----------------
+Raw table dumps are not permitted.
+
+Allowed representations:
+- brief textual summary
+- explicit omission note
+
+Examples:
+[Table 2: Sample overview — summarized]
+[Table 4 omitted — descriptive only]
+
+Figures should be described, not embedded.
+
+
+References
+----------
+- REFERENCES section must be present
+- References may be lightly cleaned
+- Citation style must not be normalized
+- References are not chunked by default
+
+
+Prohibited Actions
+------------------
+- No paraphrasing
+- No rewriting
+- No summarization
+- No interpretation
+- No citation reformatting
+
+Structural cleaning only.
+
+
+System Assumptions
+------------------
+If a processed file exists and is non-empty:
+- source_quality = "manual"
+- text is clean
+- structure is intentional
+- tables have been handled
+
+No validation is performed.
+
+
+End of Spec
+-----------
